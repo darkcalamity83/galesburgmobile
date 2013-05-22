@@ -5,7 +5,7 @@
         id        = "net.terrafirmainc.galesburgmobile"
         version   = "1.0.0">
 
-    <name>WICU Mobile Banking Application</name>
+    <name>Galesburg Burlington Mobile Banking Application</name>
 
     <description>
         mobile banking app sample application that responds to the deviceready event.
