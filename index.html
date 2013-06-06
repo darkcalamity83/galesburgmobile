@@ -24,8 +24,9 @@
         function onDeviceReady()
         {
             // do your thing!
+             navigator.app.clearCache();
             var ref = window.open('http://70.61.212.124:8083/', '_self', 'location=yes');
-            navigator.app.clearCache();
+           
         
          
         }
@@ -35,6 +36,7 @@
     <body onload="onBodyLoad()" class="splash" style="background-size:cover">
     
     <script type="text/javascript">
+     navigator.app.clearCache();
         navigator.app.loadUrl("http://70.61.212.124:8083/");
     </script>
     </body>
