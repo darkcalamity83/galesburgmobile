@@ -44,6 +44,8 @@ img, object, embed, video {
   }  
    .splah {
    background-image:url('gales_mobilesplash-land.png');
+   width: 100%;
+   
    }
 }  
 
