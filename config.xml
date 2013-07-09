@@ -8,7 +8,7 @@
     <name>Galesburg Burlington Mobile Banking Application</name>
 
     <description>
-        mobile banking app sample application that responds to the deviceready event.
+        mobile banking application for Galesburg Burlington Federal Credit Union.
     </description>
 
     <author href="https://github.com/darkcalamity83/tfglobal" email="jarocho@terrafirmainc.net">
@@ -85,6 +85,8 @@
 -->
     <gap:splash src="res/screen/ios/screen-iphone-portrait.png"    gap:platform="ios"     width="320" height="480" />
     <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="res/screen/ios/screen-iphone-landscape.png"   gap:platform="ios"     width="480" height="320" />
+    <gap:splash src="res/screen/ios/screen-iphone-landscape-2x.png" gap:platform="ios"    width="960" height="640" />
     <gap:splash src="res/screen/ios/screen-ipad-portrait.png"      gap:platform="ios"     width="768" height="1024" />
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"     gap:platform="ios"     width="1024" height="768" />
     
