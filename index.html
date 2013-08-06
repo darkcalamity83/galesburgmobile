@@ -14,27 +14,45 @@
 
         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
         <script type="text/javascript">
+         // Global InAppBrowser reference
+   	 var iabRef = null;
+
+    	function iabLoadStart(event) {
+        	alert(event.type + ' - ' + event.url);
+   	 }
+
+   	 function iabLoadStop(event) {
+       		 alert(event.type + ' - ' + event.url);
+   	 }
+   	 
+   	  function iabClose(event) {
+         alert(event.type);
+         iabRef.removeEventListener('loadstart', iabLoadStart);
+         iabRef.removeEventListener('loadstop', iabLoadStop);
+         iabRef.removeEventListener('exit', iabClose);
+   	  }       
        
-        function onBodyLoad()
-        {       
+              
             document.addEventListener("deviceready", onDeviceReady, false);
     
-        }
+        
 
         function onDeviceReady()
         {
             // do your thing!
              navigator.app.clearCache();
             
-            var ref = window.open('http://70.61.212.124:8083', '_self', 'location=yes');
-           
+            iabRef = window.open('http://70.61.212.124:8083', '_self', 'location=yes');
+            iabRef.addEventListener('loadstart', iabLoadStart);
+            iabRef.addEventListener('loadstop', iabLoadStop);
+            iabRef.addEventListener('exit', iabClose);
         
          
         }
 
         </script>
     </head>
-    <body onload="onBodyLoad()" class="splash" style="background-size:cover">
+    <body class="splash" style="background-size:cover">
     
     <script type="text/javascript">
      //navigator.app.clearCache();
