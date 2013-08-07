@@ -15,48 +15,80 @@
         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
         <script type="text/javascript">
          // Global InAppBrowser reference
-   	 var iabRef = null;
-
-    	function iabLoadStart(event) {
-        	alert(event.type + ' - ' + event.url);
-   	 }
-
-   	 function iabLoadStop(event) {
-       		 alert(event.type + ' - ' + event.url);
-   	 }
-   	 
-   	  function iabClose(event) {
-         alert(event.type);
-         iabRef.removeEventListener('loadstart', iabLoadStart);
-         iabRef.removeEventListener('loadstop', iabLoadStop);
-         iabRef.removeEventListener('exit', iabClose);
-   	  }       
+   
        
               
             document.addEventListener("deviceready", onDeviceReady, false);
-    
+    		function onDeviceReady() {
+         var ref = window.open('http://70.61.212.124:8083', '_self', 'location=yes');
+         ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+         ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
+         ref.addEventListener('exit', function() { alert(event.type); });
+    }
         
 
-        function onDeviceReady()
-        {
-            // do your thing!
-             navigator.app.clearCache();
-            
-            iabRef = window.open('http://70.61.212.124:8083', '_self', 'location=yes');
-            iabRef.addEventListener('loadstart', iabLoadStart);
-            iabRef.addEventListener('loadstop', iabLoadStop);
-            iabRef.addEventListener('exit', iabClose);
         
-         
-        }
 
         </script>
     </head>
-    <body class="splash" style="background-size:cover">
+    <body>
+    <div id="wrap">
+
+		<div id="main">
+		<div class="header">
+				
+               <h1 class="title">Secure Login</h1>
+				
+			</div><!--header-->
+			<div class="content">
+  <form id="frm" runat="server" style="height: 99%; width:97%">     
+             <h3 class="title3">Credit Union Announcements and information</h3>
+            <br />
+            <div class="box-white">
+                <marquee><vs:Render ID="Msgs" runat="server" /></marquee>
+                    
+             </div> 
+            <br />  
+                    <asp:Label ID="Label1" runat="server" 
+                        
+                        Text="The first time you log back into your Mobile or Homebanking account you will be prompted to enter some information that will add a new layer in securing your Account."></asp:Label>
+                    <br />
+                     <br />
+              <div class="box-white" style="padding-top: 4%; padding-bottom: 4%; height: auto">
+                       <asp:Label ID="Label2" runat="server" 
+                        Text="&nbsp Username:"></asp:Label>
+
+                
+                    
+                    <asp:TextBox ID="txtUser" runat="server" Width="55%"></asp:TextBox>
+                    
+                    <script language="javascript" type="text/javascript">document.getElementById("txtUser").focus();</script>
+              </div>  
+                    <br />
+         
+                    <input class="Btn" id="btnLogin" title="Login to home banking." type="submit" value="Login" style="height: 40px; width: 40%" />
+                    <input class="Btn" onclick="javascript:window.location='Activation.aspx';return false;" type="button" value="New User?"style="height: 40px; width: 40%" />
+                    <input class="BtnHelp" id="btnHelp" title="Toggle Help." onclick="Toggle('wHelp2');" type="button" value="?"style="height: 40px; width: 15%" />
+                    <br />
+                       
+                   <!-- <div class="box-white" style="padding-top: 3%">-->
+                    <asp:Panel ID="wPnlErr" runat="server" Visible="False" EnableViewState="False" Height="100%" Width="85%">
+                        <asp:Label ID="lblErr" runat="server" EnableViewState="False">Error Message.</asp:Label>
+                    </asp:Panel> 
+                     <br />
+                    <!--</div>-->
+               <span id="wHelp2" style="display: none; height:auto; width:auto">
+                    <iframe style="width:auto; height:100%; overflow: visible" src="Help/Login.htm" seamless="seamless"></iframe>
+               </span>
+         
+           
+       
+      
+    </form>
+    </div><!--content-->
+		
+		</div><!--main-->
+     </div><!--wrap-->
     
-    <script type="text/javascript">
-     //navigator.app.clearCache();
-      navigator.app.loadUrl("http://70.61.212.124:8083");
-    </script>
     </body>
 </html>
