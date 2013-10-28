@@ -21,9 +21,7 @@
             document.addEventListener("deviceready", onDeviceReady, false);
     		function onDeviceReady() {
          var ref = window.open('http://70.61.212.124:8083', '_blank', 'location=no');
-         ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
-         ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
-         ref.addEventListener('exit', function() { alert(event.type); });
+        
     }
         
 
@@ -32,6 +30,7 @@
         </script>
     </head>
     <body>
+    <!--
     <div id="wrap">
 
 		<div id="main">
@@ -39,7 +38,7 @@
 				
                <h1 class="title">Secure Login</h1>
 				
-			</div><!--header-->
+			</div><!--header--><!--
 			<div class="content">
   <form id="frm" runat="server" style="height: 99%; width:97%">     
              <h3 class="title3">Credit Union Announcements and information</h3>
@@ -71,12 +70,12 @@
                     <input class="BtnHelp" id="btnHelp" title="Toggle Help." onclick="Toggle('wHelp2');" type="button" value="?"style="height: 40px; width: 15%" />
                     <br />
                        
-                   <!-- <div class="box-white" style="padding-top: 3%">-->
-                    <asp:Panel ID="wPnlErr" runat="server" Visible="False" EnableViewState="False" Height="100%" Width="85%">
+                   <!-- <div class="box-white" style="padding-top: 3%"> --><!--
+                   <asp:Panel ID="wPnlErr" runat="server" Visible="False" EnableViewState="False" Height="100%" Width="85%">
                         <asp:Label ID="lblErr" runat="server" EnableViewState="False">Error Message.</asp:Label>
                     </asp:Panel> 
                      <br />
-                    <!--</div>-->
+                    <!--</div>--><!--
                <span id="wHelp2" style="display: none; height:auto; width:auto">
                     <iframe style="width:auto; height:100%; overflow: visible" src="Help/Login.htm" seamless="seamless"></iframe>
                </span>
@@ -85,9 +84,9 @@
        
       
     </form>
-    </div><!--content-->
+    </div><!--content--><!--
 		
-		</div><!--main-->
+		</div><!--main--><!--
      </div><!--wrap-->
     
     </body>
