@@ -91,6 +91,7 @@
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"     gap:platform="ios"     width="1024" height="768" />
 	<gap:splash src="res/screen/ios/Default_iphone5.png" 	gap:platform="ios"        width="640" height="1136" />
 	<gap:splash src="res/screen/ios/Default-586h@2x~iphone.png"	gap:platform="ios"   width="640" height="1136" />
+	
 	<!-- retina iPad support: PhoneGap 2.5.0+ only -->
 	<gap:splash src="splash/ios/Default-Landscape_at_2x.png" gap:platform="ios" width="2048" height="1496" />
 	<gap:splash src="splash/ios/Default-Portrait_at_2x.png" gap:platform="ios" width="1536" height="2008" />
